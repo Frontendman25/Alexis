@@ -999,8 +999,9 @@ img.mfp-img{
 }
 
 .testimonials{
-	&__wrap{
 		position: relative;
+	&__wrap{
+		border-bottom: 3px solid $icon-clr-red;
 		padding: 3rem 1rem 3rem 42.5rem;
 		background-color: $bg-clr-light;
 	}
@@ -1009,7 +1010,15 @@ img.mfp-img{
 		top: 50%;
 		left: 0;
     	transform: translateY(-50%);
+		border: 10px solid rgba(0, 0, 0, .2);
 		max-width: 384px;
+	}
+	&__melina{
+		display: inline-block;
+		margin-top: 2rem;
+		font-size: 4rem;
+		line-height: 1;
+		font-family: "Sacramento-Regular";
 	}
 }
 
