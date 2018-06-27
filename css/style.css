@@ -45,8 +45,10 @@ h1, h2, h3, h4, h5, h6 {
 .blockHeader__text {
   margin-bottom: 7.5rem;
   font-size: 1.8rem; }
-.blockHeader_light h2, .blockHeader p {
+.blockHeader_light h2, .blockHeader_light p {
   color: #fff; }
+.blockHeader_dark h2, .blockHeader_dark p {
+  color: #313131; }
 
 .captions-content, .aboutUsText__caption, .ourFocus__caption, .portfolio__caption, .teamDescription__caption, .work__caption {
   margin-bottom: 3.5rem;
@@ -728,6 +730,7 @@ img.mfp-img {
       background-color: #b27cf5; }
 
 .testimonialsWrap {
+  margin-bottom: 14rem;
   padding: 14rem 0;
   background-color: #3f4049; }
 
@@ -750,6 +753,125 @@ img.mfp-img {
     font-size: 4rem;
     line-height: 1;
     font-family: "Sacramento-Regular"; }
+
+.selectWrap {
+  margin-bottom: 12rem; }
+
+.select {
+  margin-bottom: 6rem; }
+
+.selectBox__img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1.3rem; }
+.selectBox__caption {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1.8rem;
+  font-family: 'Poppins-Medium'; }
+.selectBox__text {
+  margin-top: 1.5rem;
+  font-size: 1.5rem; }
+
+.start__text {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+  font-size: 2.5rem; }
+
+.blogWrap {
+  margin-bottom: 14rem;
+  padding-top: 13rem;
+  padding-bottom: 15rem;
+  background-color: #eee;
+  display: flex; }
+
+.blog {
+  display: flex; }
+
+.blogCol_first {
+  display: flex;
+  align-content: stretch;
+  align-items: stretch; }
+
+.blogBox {
+  margin-bottom: 2rem;
+  background-color: #fff; }
+  .blogBox:last-child {
+    margin-bottom: 0; }
+  .blogBox_red {
+    border-bottom: 3px solid #fc5f45; }
+  .blogBox_green {
+    border-bottom: 3px solid #38c695; }
+  .blogBox_purple {
+    border-bottom: 3px solid #b27cf5; }
+  .blogBox_orange {
+    border-bottom: 3px solid #feb960; }
+  .blogBox__wrapImg {
+    position: relative; }
+  .blogBox__description {
+    position: absolute;
+    left: 5rem;
+    bottom: 3rem; }
+  .blogBox__description_static {
+    position: static; }
+  .blogBox__name {
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Poppins-Medium'; }
+    .blogBox__name_red {
+      color: #fc5f45; }
+    .blogBox__name_green {
+      color: #38c695; }
+    .blogBox__name_purple {
+      color: #b27cf5; }
+    .blogBox__name_orange {
+      color: #feb960; }
+  .blogBox__date {
+    font-size: 1.3rem; }
+  .blogBox__about {
+    background-color: #fff;
+    padding: 2.5rem 5rem 3rem 5rem; }
+  .blogBox__caption {
+    font-size: 2rem;
+    font-family: 'Poppins-Medium'; }
+  .blogBox__text {
+    font-size: 1.5rem; }
+  .blogBox__link {
+    cursor: pointer;
+    font-family: 'Poppins-Medium'; }
+    .blogBox__link_red {
+      color: #fc5f45; }
+    .blogBox__link_green {
+      color: #38c695; }
+    .blogBox__link_purple {
+      color: #b27cf5; }
+    .blogBox__link_orange {
+      color: #feb960; }
+
+.subscribe {
+  margin-bottom: 15rem; }
+  .subscribe__caption {
+    font-size: 3rem; }
+  .subscribe__formWrap {
+    display: flex;
+    justify-content: center;
+    overflow: hidden; }
+  .subscribe__email {
+    border: 1px solid #eee;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    padding: 1rem 1rem;
+    width: 30%;
+    font-size: 1.8rem; }
+    .subscribe__email:focus {
+      outline: none;
+      background-color: #eee; }
+  .subscribe__btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px; }
 
 /*--------------------------------------------------------------
 ## Posts and pages
