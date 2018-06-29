@@ -27,11 +27,44 @@
 	<![endif]-->
 </head>
 <body>
+	<div class="button_container hidden-sm hidden-md hidden-lg" id="toggle"><span class="top"></span><span class="middle"></span><span class="bottom"></span></div>
+	<div class="overlay" id="overlay">
+		<div class="nav overlay-menu">
+			<div class="container">
+				<div class="header">
+					<ul class="menu text-center">
+						<li class="menu__item"><a href="" class="menu__link"><h1 class="logo"><a class="logo__link" href="/">Alexis</a></h1></a></li>
+						<li class="menu__item"><a href="" class="menu__link">About Us</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Our Focus</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Portfolio</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Our Team</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Work Steps</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Pricing</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Testimonials</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Blog</a></li>
+						<li class="menu__item"><a href="" class="menu__link">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+<!--
+      <nav class="overlay-menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+-->
+    </div>
+    
+    
 	<div class="nav">
 		<div class="container">
 			<div class="header">
 				<h1 class="logo"><a class="logo__link" href="/">Alexis</a></h1>
-				<ul class="menu">
+				<ul class="menu hidden-xs">
 					<li class="menu__item"><a href="" class="menu__link">About Us</a></li>
 					<li class="menu__item"><a href="" class="menu__link">Our Focus</a></li>
 					<li class="menu__item"><a href="" class="menu__link">Portfolio</a></li>
@@ -74,10 +107,10 @@
 	<div class="aboutUs">
 		<div class="container">
 			<div class="aboutUsWrap row">
-				<div class="aboutUsPicture col-xs-6">
+				<div class="aboutUsPicture col-xs-12 col-sm-6">
 					<div class="aboutUsPicture__bgImg img-responsive" src="img/south-alabama-forest.jpg"></div>
 				</div>
-				<div class="aboutUsText col-sm-7">
+				<div class="aboutUsText  col-xs-12 col-sm-7">
 					<h2 class="aboutUsText__caption">About Us.</h2>
 					<p class="aboutUsText__text">Analytics release series A financing launch party interaction design android angel investor. Vesting period social media sales conversion launch party rockstar incubator customer social proof graphical user interface technology supply chain. Non-disclosure agreement rockstar creative partner network launch party social proof paradigm shift long tail influencer.
 					</p>
@@ -265,7 +298,7 @@ interaction design android angel investor.</span>
 					</div>
 				</a></div>
 			</div>
-			<div class="tab_container">
+			<div class="tab_container hidden-xs">
 				<div id="tab1" class="tab_content">
 					<h3 class="about">About Michael.</h3>
 					<p class="text">
@@ -670,15 +703,55 @@ interaction design android angel investor.</span>
 		</div>
 		<div class="container">
 			<form action="#" class="get row">
-				<div class="getBox col-sm-6">
-					<input type="text" class="getBox__name">
+				<div class="get__col col-sm-6">
+					<input type="text" class="get__input text-center" placeholder="Your Name">
 				</div>
-				<div class="getBox col-sm-6">
-					<input type="text" class="getBox__name">
+				<div class="get__col col-sm-6">
+					<input type="email" class="get__input text-center" placeholder="Your Email">
+				</div>
+				<div class="get__col col-sm-6">
+					<input type="text" class="get__input text-center" placeholder="Subject">
+				</div>
+				<div class="get__col col-sm-6">
+					<input type="email" class="get__input text-center" placeholder="Project">
+				</div>
+				<div class="get__col col-sm-12">
+					<textarea class="get__message text-center" name="message" placeholder="Your Message" rows="6"></textarea>
+				</div>
+				<div class="get__btn text-center">
+					<button class="get__btn btn">SEND MESSAGE</button>
 				</div>
 			</form>
 		</div>
 	</div>
+	
+	<div class="footer">
+		<div class="container">
+			<div class="footerWrap row">
+				<div class="footerWrap__main col-sm-12">
+					<div class="footerWrap__box col-sm-3">
+						<p class="logo logo_footer"><a class="logo__link logo__link_footer" href="/">Alexis</a></p>
+					</div>
+					<div class="footerWrap__box col-sm-3">
+						<h4 class="footerWrap__caption footerWrap__caption_green">Alexis LLC.</h4>
+						<span class="footerWrap__info">4125 Brighton Circle Road</span><br>
+						<span class="footerWrap__info">Little Falls, MN 56345</span>
+					</div>
+					<div class="footerWrap__box col-sm-3">
+						<h4 class="footerWrap__caption footerWrap__caption_purple">Alexis LLC.</h4>
+						<span class="footerWrap__info">4125 Brighton Circle Road</span><br>
+						<span class="footerWrap__info">Little Falls, MN 56345</span>
+					</div>
+					<div class="footerWrap__box col-sm-3">
+						<h4 class="footerWrap__caption footerWrap__caption_orange">Alexis LLC.</h4>
+						<span class="footerWrap__info">4125 Brighton Circle Road</span><br>
+						<span class="footerWrap__info">Little Falls, MN 56345</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -768,6 +841,13 @@ interaction design android angel investor.</span>
 			});
 			$('.your-class').slick();
 		});
+	</script>
+	
+	<script>
+		$('#toggle').click(function() {
+   $(this).toggleClass('active');
+   $('#overlay').toggleClass('open');
+  });
 	</script>
 	</body>
 </html>

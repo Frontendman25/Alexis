@@ -38,17 +38,132 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+	html, body{
+		font-size: 9px;
+	}
 
+	body{
+		overflow-x: hidden;
+		line-height: 1.7;
+	}
+	
+	.header{
+	}
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+	html, body{
+		font-size: 8px;
+	}
 
+	body{
+		overflow-x: hidden;
+		line-height: 1.6;
+	}
+	
+	.header{
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+	.logo{
+		&__link{
+			font-size: 4rem;
+		}
+	}
+
+	.menu{
+		display: flex;
+		flex-wrap: wrap;
+		&__item{
+			margin-right: 0;
+		}
+		&__link{
+			font-size: 2rem;
+			color: $txt-clr-light;
+			&:hover{
+				color: $bg-clr-less-dark;
+			}
+		}
+	}
+	
+	.aboutUsText{
+		position: static;
+		padding: 1.5rem;
+    	transform: translateY(0);
+	}
+	
+	.tabs > div a {
+		cursor: auto;
+	}
+	
+	.tabs > div.active::after{
+		display: none;
+	}
+	
+	.steps{
+		margin-bottom: 2.5rem;
+		&__wrapImg{
+			max-height: 300px;
+			overflow: hidden;
+		}
+		&__img{
+			width: 100%;
+		}
+		&__col{
+			top: 0;
+		}
+		&__col_right{
+		}
+		&__col_text{
+			position: static;
+		}
+		&__description{
+    		padding: 1.5rem 1rem 3rem 1.5rem;
+		}
+		&__caption{
+			font-size: 2.5rem;
+		}
+	}
+	
+	.select{
+		&:first-child{
+			margin-bottom: 0;
+		}
+	}
+	
+	.selectBox{
+		margin-bottom: 3rem;
+		text-align: center;
+	}
+	
+	.footerWrap{
+		&__main{
+			text-align: center;
+		}
+	}
+	
+	.logo{
+		transform: translate(0, 0);
+		&_footer{
+			position: static;
+		}
+	}
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 480px) {
+	html, body{
+		font-size: 7px;
+	}
 
+	body{
+		overflow-x: hidden;
+		line-height: 1.5;
+	}
 }
 
 /* Custom, iPhone Retina */ 

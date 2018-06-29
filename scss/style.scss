@@ -118,13 +118,157 @@ h1, h2, h3, h4, h5, h6{
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
+a{
+	transition: all .3s;
+}
 a:hover{
+	text-decoration: none;
+}
+a:focus{
+	color: inherit;
 	text-decoration: none;
 }
 
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+// adaptive menu
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+$color-background: #F5F5F5;
+$color-main: #1abc9c;
+$color-active: #FFF;
+$color-link: #FFF;
+
+$button-height: 20px;
+$button-width: 30px;
+  
+a {
+	text-align: center;
+}
+
+.button_container {
+	position: fixed;
+	top: 3%;
+	right: 3%;
+	height: $button-height;
+	width: $button-width;
+	cursor: pointer;
+	z-index: 2000;
+	transition: opacity .2s ease;
+	&:hover {
+	opacity: .7;
+}
+
+&.active {
+	.top {
+		transform: translateY(11px) translateX(0) rotate(45deg);
+		background: $color-active;
+	}
+	.middle {
+		opacity: 0;
+		background: $color-active;
+	}
+	.bottom {
+		transform: translateY(-11px) translateX(0) rotate(-45deg);
+		background: $color-active;
+	}
+}
+
+	span {
+		background: $attention-clr;
+		border: none;
+		height: 5px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: all .2s ease;
+		cursor: pointer;
+		&:nth-of-type(2) {
+		top: 11px;
+	}
+
+		&:nth-of-type(3) {
+			top: 22px;
+		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	background: $bg-clr-dark;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0%;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .2s, visibility .2s, height .2s;
+	overflow: hidden;
+	z-index: 10;
+
+	&.open {
+		opacity: .9;
+		visibility: visible;
+		height: 100%;
+
+		li {
+			animation: fadeInRight .2s ease forwards;
+			animation-delay: .2s;
+
+			&:nth-of-type(2) {
+			animation-delay: .2s;
+		}
+			&:nth-of-type(3) {
+			animation-delay: .2s;
+		}
+			&:nth-of-type(4) {
+			animation-delay: .2s;
+			}
+		}
+	}
+	nav {
+		position: relative;
+		height: 70%;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 50px;
+		font-family: 'Varela Round', serif;
+		font-weight: 400;
+		text-align: center;
+	}
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0 auto;
+		display: inline-block;
+		position: relative;
+		height: 100%; 
+
+		li {
+		display: block;
+		height: 25%;
+		height: calc(100% / 4);
+		min-height: 40px;
+		position: relative;
+		opacity: 0;
+		}
+	}
+}
+
+@keyframes fadeInRight {
+0% {
+	opacity: 0;
+	left: 20%;
+}
+100% {
+	opacity: 1;
+	left: 0;
+	}
+}
+// adaptive menu end
+
 .header{
 	display: flex;
 	align-items: center;
@@ -133,17 +277,31 @@ a:hover{
 }
 
 .logo{
-	margin-right: 2rem;
 	font-size: 3.5rem;
 	font-family: "Wisdom-Script";
-	transition: 1s;
-	&:first-letter{
-		color: $attention-clr;
+	margin-right: 1rem;
+	&__link{
+		display: inline-block;
+		transition: 1s;
+		&:first-letter{
+			color: $attention-clr;
+		}
 	}
-}
-
-.logo:hover{
-	transform: rotate3d(0, 1, 0, 360deg);
+	&__link:hover{
+		transform: rotate3d(0, 1, 0, 360deg);
+	}
+	&_footer{
+		top: 50%;
+		left: 50%;
+    	transform: translate(25%, 25%);
+	}
+	&__link_footer{
+		margin-right: 0;
+		color: $txt-clr-light;
+		&:hover{
+			color: $bg-clr-less-dark;
+		}
+	}
 }
 
 .menu{
@@ -1162,6 +1320,7 @@ img.mfp-img{
 .subscribe{
 	margin-bottom: 15rem;
 	&__caption{
+		margin-bottom: 1.5rem;
 		font-size: 3rem;
 	}
 	&__formWrap{
@@ -1186,6 +1345,65 @@ img.mfp-img{
 		border-bottom-left-radius: 0;
 		border-top-right-radius: 35px;
 		border-bottom-right-radius: 35px;
+	}
+}
+
+.getWrap{
+	padding-bottom: 14rem;
+	background-color: $bg-clr-less-dark;
+}
+
+.get{
+	&__col{
+		margin-bottom: 2rem;
+	}
+	&__input, &__message{
+		border: none;
+		padding: 1.5rem;
+		width: 100%;
+		font-size: 1.6rem;
+	}
+	&__btn{
+		margin-top: 3rem;
+	}
+}
+
+.footer{
+	background-color: $bg-clr-less-dark;
+}
+
+.footerWrap{
+	padding: 0 2rem;
+	&__main{
+		border: 3px solid;
+		border-image-slice: 0 0 3 0;
+		border-image-width: 0 0 3px 0;
+		border-image-outset: 0px 0px 0px 0px;
+		border-image-repeat: stretch stretch;
+		border-image-source: url(../img/line.png);
+		padding: 1.5rem 0;
+		background-color: $bg-clr-dark;
+	}
+	&__box{
+		padding: 2rem;
+	}
+	&__caption{
+		margin-bottom: 1.5rem;
+		font-size: 1.8rem;
+		font-family: 'Poppins-Medium';
+		&_green{
+			color: $icon-clr-green;
+		}
+		&_purple{
+			color: $icon-clr-purple;
+		}
+		&_orange{
+			color: $icon-clr-orange;
+		}
+	}
+	&__info{
+		font-size: 1.6rem;
+		color: $txt-clr-light;
 	}
 }
 
