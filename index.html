@@ -369,7 +369,7 @@ interaction design android angel investor.</span>
 	<div class="workWrap">
 		<div class="container">
 			<div class="work text-center">
-				<h2 class="work__caption">Work Steps</h2>
+				<h2 class="work__caption">Work Steps.</h2>
 				<p class="work__text">We understand your requirement and provide quality works.</p>
 			</div>
 			<div class="steps row">
@@ -430,7 +430,7 @@ interaction design android angel investor.</span>
 	<div class="priceWrap">
 		<div class="container">
 			<div class="blockHeader text-center">
-				<h2 class="blockHeader__caption">Work Steps</h2>
+				<h2 class="blockHeader__caption">Pricing Table.</h2>
 				<p class="blockHeader__text">We understand your requirement and provide quality works.</p>
 			</div>
 			<div class="price row">
@@ -702,24 +702,30 @@ interaction design android angel investor.</span>
 			<p class="blockHeader__text blockHeader__text">We understand your requirement and provide quality works.</p>
 		</div>
 		<div class="container">
-			<form action="#" class="get row">
-				<div class="get__col col-sm-6">
-					<input type="text" class="get__input text-center" placeholder="Your Name">
+			<form action="send.php" class="get" method="post">
+				<div class="row">
+					<div class="get__col col-sm-6">
+						<input type="text" class="get__input text-center" name="name" placeholder="Your Name" maxlength="30" required>
+					</div>
+					<div class="get__col col-sm-6">
+						<input type="email" class="get__input text-center" name="email" placeholder="Your Email" required>
+					</div>
 				</div>
-				<div class="get__col col-sm-6">
-					<input type="email" class="get__input text-center" placeholder="Your Email">
+				<div class="row">
+					<div class="get__col col-sm-6">
+						<input type="text" class="get__input text-center" placeholder="Subject" name="subject" required>
+					</div>
+					<div class="get__col col-sm-6">
+						<input type="email" class="get__input text-center" placeholder="Project" name="project" required>
+					</div>
 				</div>
-				<div class="get__col col-sm-6">
-					<input type="text" class="get__input text-center" placeholder="Subject">
-				</div>
-				<div class="get__col col-sm-6">
-					<input type="email" class="get__input text-center" placeholder="Project">
-				</div>
-				<div class="get__col col-sm-12">
-					<textarea class="get__message text-center" name="message" placeholder="Your Message" rows="6"></textarea>
-				</div>
-				<div class="get__btn text-center">
-					<button class="get__btn btn">SEND MESSAGE</button>
+				<div class="row">
+					<div class="get__col col-sm-12">
+						<textarea class="get__message text-center" name="message" placeholder="Your Message" rows="6" required></textarea>
+					</div>
+					<div class="get__btn col-sm-12 text-center">
+						<button type="submit" class="get__btn btn">SEND MESSAGE</button>
+					</div>
 				</div>
 			</form>
 		</div>
@@ -758,6 +764,20 @@ interaction design android angel investor.</span>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 	<script src="js/magnific-popup.js"></script>
 	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script>
+		$(function(){
+			$('.get').validate({
+				rules: {
+					email: {
+						email: true,
+						digits: true
+					}
+				},
+				focusCleanup: true
+			});
+		});
+	</script>
 	<script>
 		$(document).ready(function($) {
 			$('.tab_content').hide();

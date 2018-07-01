@@ -24,6 +24,9 @@
   font-family: "Sacramento-Regular";
   src: url(../fonts/Sacramento/Sacramento-Regular.ttf); }
 /*--------------------------------------------------------------
+# Mixins
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
 html, body {
@@ -69,6 +72,9 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+input.error, textarea.error {
+  border: 1px solid #fc5f45; }
+
 .btn {
   border-radius: 30px;
   padding: 1.9rem 4.1rem;
@@ -86,6 +92,14 @@ h1, h2, h3, h4, h5, h6 {
 .btn:active {
   -webkit-transform: scale(0.98);
   transform: scale(0.98); }
+
+label.error {
+  position: absolute;
+  bottom: -20px;
+  left: 2rem;
+  text-align: center;
+  color: #fc5f45;
+  font-size: 1.5rem; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -308,6 +322,9 @@ a {
   background-size: cover; }
 
 .aboutUsText {
+  padding-top: 1rem;
+  background: url("../img/1.png") no-repeat;
+  background-position: center 1%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -326,6 +343,9 @@ a {
     font-size: 1.5rem; }
 
 .ourFocusWrap {
+  padding-top: 14rem;
+  background: url("../img/2.png") no-repeat;
+  background-position: center 2%;
   background-color: #eee;
   padding: 13.5rem 0; }
 
@@ -599,13 +619,18 @@ img.mfp-img {
     color: #fff; }
 
 .portfolioWrap {
-  margin-top: 14rem;
+  padding-top: 14rem;
+  background: url("../img/3.png") no-repeat;
+  background-position: center 2%;
   margin-bottom: 12rem; }
 
 .portfolio__text {
   font-size: 1.8rem; }
 
 .teamWrap {
+  padding-top: 14rem;
+  background: url("../img/4.png") no-repeat;
+  background-position: center 2%;
   padding: 14rem 0; }
 
 .teamDescription__text {
@@ -733,6 +758,9 @@ img.mfp-img {
   color: #feb960; }
 
 .workWrap {
+  padding-top: 14rem;
+  background: url("../img/5.png") no-repeat;
+  background-position: center 2%;
   margin-bottom: 14rem; }
 
 .work__text {
@@ -765,6 +793,11 @@ img.mfp-img {
       border-bottom: 3px solid #feb960; }
   .steps__caption {
     font-size: 2.5rem; }
+
+.priceWrap {
+  padding-top: 14rem;
+  background: url("../img/6.png") no-repeat;
+  background-position: center 2%; }
 
 .table {
   padding: 3rem 0; }
@@ -842,6 +875,9 @@ img.mfp-img {
       background-color: #b27cf5; }
 
 .testimonialsWrap {
+  padding-top: 14rem;
+  background: url("../img/7.png") no-repeat;
+  background-position: center 2%;
   margin-bottom: 14rem;
   padding: 14rem 0;
   background-color: #3f4049; }
@@ -867,6 +903,9 @@ img.mfp-img {
     font-family: "Sacramento-Regular"; }
 
 .selectWrap {
+  padding-top: 14rem;
+  background: url("../img/8.png") no-repeat;
+  background-position: center 2%;
   margin-bottom: 12rem; }
 
 .select {
@@ -892,6 +931,9 @@ img.mfp-img {
   font-size: 2.5rem; }
 
 .blogWrap {
+  padding-top: 14rem;
+  background: url("../img/9.png") no-repeat;
+  background-position: center 2%;
   margin-bottom: 14rem;
   padding-top: 13rem;
   padding-bottom: 15rem;
@@ -987,12 +1029,18 @@ img.mfp-img {
     border-bottom-right-radius: 35px; }
 
 .getWrap {
+  padding-top: 14rem;
+  background: url("../img/10.png") no-repeat;
+  background-position: center 2%;
   padding-bottom: 14rem;
   background-color: #ccc; }
 
 .get__col {
-  margin-bottom: 2rem; }
+  position: relative;
+  margin-bottom: 2.5rem;
+  text-align: center; }
 .get__input, .get__message {
+  margin-bottom: .5rem;
   border: none;
   padding: 1.5rem;
   width: 100%;
