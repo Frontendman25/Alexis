@@ -152,6 +152,17 @@
 			position: static;
 		}
 	}
+	
+	.blog{
+		display: block;
+	}
+
+	.blogCol{
+		&_first{
+			display: block;
+			margin-bottom: 2rem;
+		}
+	}
 }
 
 /* Extra Small Devices, Phones */ 

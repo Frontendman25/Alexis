@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @font-face {
   font-family: "Roboto-Regular";
   src: url(../fonts/roboto/Roboto-Regular.ttf); }
@@ -81,7 +80,7 @@ input.error, textarea.error {
   background-color: #fc5f45;
   font-family: 'Poppins-SemiBold';
   color: #fff;
-  transition: all .2s; }
+  transition: all .1s; }
 
 .btn:hover {
   color: #fff;
@@ -100,6 +99,19 @@ label.error {
   text-align: center;
   color: #fc5f45;
   font-size: 1.5rem; }
+
+#up {
+  display: none;
+  position: fixed;
+  border: none;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  font-size: 4rem;
+  color: #fc5f45;
+  cursor: pointer;
+  transform: rotate(-45deg); }
+  #up:hover {
+    color: #fc4d30; }
 
 /*--------------------------------------------------------------
 # Navigation
@@ -136,14 +148,15 @@ a {
   z-index: 2000;
   transition: opacity .2s ease; }
   .button_container:hover {
-    opacity: .7; }
-  .button_container.active .top {
+    opacity: .7;
+    z-index: 110; }
+  .button_container.activeMenu .top {
     transform: translateY(11px) translateX(0) rotate(45deg);
     background: #FFF; }
-  .button_container.active .middle {
+  .button_container.activeMenu .middle {
     opacity: 0;
     background: #FFF; }
-  .button_container.active .bottom {
+  .button_container.activeMenu .bottom {
     transform: translateY(-11px) translateX(0) rotate(-45deg);
     background: #FFF; }
   .button_container span {
@@ -161,7 +174,7 @@ a {
     .button_container span:nth-of-type(3) {
       top: 22px; }
 
-.overlay {
+.overlayNav {
   position: fixed;
   background: #3f4049;
   top: 0;
@@ -173,20 +186,20 @@ a {
   transition: opacity .2s, visibility .2s, height .2s;
   overflow: hidden;
   z-index: 10; }
-  .overlay.open {
+  .overlayNav.open {
     opacity: .9;
     visibility: visible;
     height: 100%; }
-    .overlay.open li {
+    .overlayNav.open li {
       animation: fadeInRight .2s ease forwards;
       animation-delay: .2s; }
-      .overlay.open li:nth-of-type(2) {
+      .overlayNav.open li:nth-of-type(2) {
         animation-delay: .2s; }
-      .overlay.open li:nth-of-type(3) {
+      .overlayNav.open li:nth-of-type(3) {
         animation-delay: .2s; }
-      .overlay.open li:nth-of-type(4) {
+      .overlayNav.open li:nth-of-type(4) {
         animation-delay: .2s; }
-  .overlay nav {
+  .overlayNav nav {
     position: relative;
     height: 70%;
     top: 50%;
@@ -195,14 +208,14 @@ a {
     font-family: 'Varela Round', serif;
     font-weight: 400;
     text-align: center; }
-  .overlay ul {
+  .overlayNav ul {
     list-style: none;
     padding: 0;
     margin: 0 auto;
     display: inline-block;
     position: relative;
     height: 100%; }
-    .overlay ul li {
+    .overlayNav ul li {
       display: block;
       height: 25%;
       height: calc(100% / 4);
@@ -1093,6 +1106,73 @@ img.mfp-img {
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+
+.popup {
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: #FFF; }
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 23px;
+  height: 23px;
+  cursor: pointer; }
+
+.close-popup:before {
+  content: '';
+  background-color: #000;
+  position: absolute;
+  height: 1px;
+  width: 31px;
+  top: 11px;
+  left: -4px;
+  transform: rotate(-45deg); }
+
+.close-popup:after {
+  content: '';
+  background-color: #000;
+  position: absolute;
+  height: 1px;
+  width: 31px;
+  top: 11px;
+  transform: rotate(45deg);
+  left: -4px; }
+
+.scroll-up {
+  width: 130px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fcfcfc;
+  color: #aaa;
+  font-size: 13px;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background .2s ease;
+  display: none; }
+
+.scroll-up:hover {
+  background-color: #eeeeee;
+  color: #777777; }
+
 /*==================================================
 =            Bootstrap 3 Media Queries             =
 ==================================================*/
@@ -1181,7 +1261,14 @@ img.mfp-img {
   .logo {
     transform: translate(0, 0); }
     .logo_footer {
-      position: static; } }
+      position: static; }
+
+  .blog {
+    display: block; }
+
+  .blogCol_first {
+    display: block;
+    margin-bottom: 2rem; } }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   html, body {
