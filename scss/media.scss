@@ -48,6 +48,7 @@
 	}
 	
 	.header{
+		
 	}
 }
 
@@ -89,11 +90,34 @@
 			}
 		}
 	}
+
+	.aboutUsPicture{
+		&__bgImg{
+			border: 10px solid $img-bg-clr;
+			min-height: 300px;
+			background: url(../img/south-alabama-forest.jpg) no-repeat;
+			background-size: cover;
+		}
+	}
 	
 	.aboutUsText{
 		position: static;
+		border-image-width: 0 15px 3px 15px;
 		padding: 1.5rem;
+    transform: translateY(0);
+	}
+
+	.testimonials{
+		&__wrap{
+			padding: 3rem 1.5rem 3rem 1.5rem;
+		}
+		&__img{
+			position: static;
+			display: block;
+			max-width: 100%;
+			margin-bottom: 2rem;
     	transform: translateY(0);
+		}
 	}
 	
 	.tabs > div a {
@@ -136,7 +160,7 @@
 	}
 	
 	.selectBox{
-		margin-bottom: 3rem;
+		margin-bottom: 5rem;
 		text-align: center;
 	}
 	
@@ -162,6 +186,17 @@
 			display: block;
 			margin-bottom: 2rem;
 		}
+	}
+}
+
+/* My size */
+@media only screen and (max-width : 600px) {
+	.mfp-arrow-right{
+		right: -20px;
+	}
+
+	.mfp-arrow-left{
+		left: -20px;
 	}
 }
 

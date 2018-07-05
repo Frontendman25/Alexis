@@ -136,7 +136,7 @@ label.error{
 	border: none;
 	right: 1.5rem;
 	bottom: 1.5rem;
-	font-size: 4rem;
+	font-size: 5rem;
     color: $attention-clr;
 	cursor: pointer;
 	transform: rotate(-45deg);
@@ -186,7 +186,7 @@ a {
 
 .button_container {
 	position: fixed;
-	top: 3%;
+	top: 3.5rem;
 	right: 3%;
 	height: $button-height;
 	width: $button-width;
@@ -851,6 +851,10 @@ img.mfp-img{
 		@extend .caption-description;
 		font-size: 1.8rem;
 	}
+}
+
+.mfp-close{
+	font-size: 4.5rem;
 }
 
 .teamWrap{

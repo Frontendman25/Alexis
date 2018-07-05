@@ -106,7 +106,7 @@ label.error {
   border: none;
   right: 1.5rem;
   bottom: 1.5rem;
-  font-size: 4rem;
+  font-size: 5rem;
   color: #fc5f45;
   cursor: pointer;
   transform: rotate(-45deg); }
@@ -140,7 +140,7 @@ a {
 
 .button_container {
   position: fixed;
-  top: 3%;
+  top: 3.5rem;
   right: 3%;
   height: 20px;
   width: 30px;
@@ -639,6 +639,9 @@ img.mfp-img {
 
 .portfolio__text {
   font-size: 1.8rem; }
+
+.mfp-close {
+  font-size: 4.5rem; }
 
 .teamWrap {
   padding-top: 14rem;
@@ -1221,9 +1224,25 @@ img.mfp-img {
       .menu__link:hover {
         color: #ccc; }
 
+  .aboutUsPicture__bgImg {
+    border: 10px solid #ccc;
+    min-height: 300px;
+    background: url(../img/south-alabama-forest.jpg) no-repeat;
+    background-size: cover; }
+
   .aboutUsText {
     position: static;
+    border-image-width: 0 15px 3px 15px;
     padding: 1.5rem;
+    transform: translateY(0); }
+
+  .testimonials__wrap {
+    padding: 3rem 1.5rem 3rem 1.5rem; }
+  .testimonials__img {
+    position: static;
+    display: block;
+    max-width: 100%;
+    margin-bottom: 2rem;
     transform: translateY(0); }
 
   .tabs > div a {
@@ -1252,7 +1271,7 @@ img.mfp-img {
     margin-bottom: 0; }
 
   .selectBox {
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
     text-align: center; }
 
   .footerWrap__main {
@@ -1269,6 +1288,13 @@ img.mfp-img {
   .blogCol_first {
     display: block;
     margin-bottom: 2rem; } }
+/* My size */
+@media only screen and (max-width: 600px) {
+  .mfp-arrow-right {
+    right: -20px; }
+
+  .mfp-arrow-left {
+    left: -20px; } }
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 480px) {
   html, body {
