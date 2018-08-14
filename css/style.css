@@ -549,7 +549,7 @@ a {
   display: inline-block; }
 
 img.mfp-img {
-  width: 85vw; }
+  width: 100%; }
 
 .popup-content {
   position: relative;

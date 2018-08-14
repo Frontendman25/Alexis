@@ -8,18 +8,14 @@
 	<title>Alexis</title>
 
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<!--<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">-->
-   
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">   
 	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-	<link rel="stylesheet" href="css/maginific-popup.css">
+	<link rel="stylesheet" href="css/maginific-popup.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-	<link rel="stylesheet" href="css/slick-theme.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slick-theme.min.css">
+	<link rel="stylesheet" href="css/animate.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 	<!--[if lt IE 9]>
@@ -759,212 +755,15 @@ interaction design android angel investor.</span>
 		</div>
 	</div>
 	
-<!--	<button class="" type="button" >UP</button>-->
 	<i id="up" class="fas fa-rocket"></i>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-	<script src="js/magnific-popup.js"></script>
-	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="js/magnific-popup.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<!--<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
 	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/wow.js"></script>	
+	<script src="js/wow.min.js"></script>
 
-	<script>
-		new WOW().init();
-	</script>	
-	
-	<script>
-		$(function() {
-			var a = $(window).scrollTop();
-
-			$(window).on("scroll", function(){
-				var pos = $(window).scrollTop();
-				if( pos > 600){
-					$("#up").fadeIn(600);
-				}else{
-					$("#up").fadeOut(600);
-				}
-			});
-
-			$("#up").on("click", function(){
-				$("html,body").animate({scrollTop:0},300);
-			});
-		});
-	</script>
-	<script>
-		$(function(){
-			$('#toggle').click(function() {
-				$(this).toggleClass('activeMenu');
-				$('#overlayNav').toggleClass('open');
-			});
-		})
-	</script>
-	
-	<script>
-		$('.scroll').click(function(){
-			$('html, body').animate({
-				scrollTop: $( $.attr(this, 'href') ).offset().top
-			}, 400);
-			return false;
-		});
-
-/* END Smooth Scroll */
-	</script>
-	<script>
-		$(function(){
-			$('.get').validate({
-				rules: {
-					email: {
-						email: true,
-					}
-				},
-				focusCleanup: true
-			});
-		});
-	</script>
-	
-	<script>
-		// Отправка заявки 
-		$(document).ready(function() {
-			$('.get').submit(function() { // проверка на пустоту заполненных полей. Атрибут html5 — required не подходит (не поддерживается Safari)
-
-				$.ajax({
-					type: "POST",
-					url: "send.php",
-					data: $(this).serialize()
-				}).done(function() {
-					$('.js-overlay-thank-you').fadeIn();
-					$(this).find('input').val('');
-					$('.get').trigger('reset');
-				});
-				return false;
-			});
-		});
-
-		// Закрыть попап «спасибо»
-		$('.js-close-thank-you').click(function() { // по клику на крестик
-			$('.js-overlay-thank-you').fadeOut();
-		});
-
-		$(document).mouseup(function (e) { // по клику вне попапа
-			var popup = $('.popup');
-			if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-				$('.js-overlay-thank-you').fadeOut();
-			}
-		});
-
-		// Маска ввода номера телефона (плагин maskedinput)
-//		$(function($){
-//			$('[name="phone"]').mask("+7(999) 999-9999");
-//		});
-
-
-
-		// Кнопка «Наверх/Вниз»
-//		var lastScrollPosition = 0; 
-//
-//		$('#scroll-up').click( function(){
-//			if ( $(document).scrollTop() > 0 ) {
-//				$('body').animate({scrollTop:0},1000);
-//				lastScrollPosition = $(document).scrollTop();
-//			} else {
-//				$('body').animate({scrollTop:lastScrollPosition},1000);
-//			}	
-//		});
-//
-//		$(document).scroll( function() {
-//			if ( $(document).scrollTop() > 0 ) {
-//				$('#scroll-up').fadeIn();
-//				$('#scroll-up').text('Наверх');
-//			} else {
-//				$('#scroll-up').text('Вниз');
-//			}
-//		});
-	</script>
-	
-	<script>
-		$(document).ready(function($) {
-			$('.tab_content').hide();
-			$('.tab_content:first').show();
-			$('.tabs div:first').addClass('active');
-			$('.tabs div').click(function(event) {
-				event.preventDefault();
-				$('.tabs div').removeClass('active');
-				$(this).addClass('active');
-				$('.tab_content').hide();
-
-				var selectTab = $(this).find('a').attr("href");
-
-				$(selectTab).fadeIn();
-			});
-		});
-    </script>
-	<script>
-		$(document).ready(function() {
-			$('.popup-gallery').magnificPopup({
-				delegate: 'a',
-				type: 'image',
-				tLoading: 'Loading image #%curr%...',
-				mainClass: 'mfp-img-mobile',
-				gallery: {
-					enabled: true,
-					navigateByImgClick: true,
-					preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-				},
-				image: {
-					tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-				}
-			});
-		});
-		
-		
-		/* Video Popup*/
-		jQuery(document).ready(function ($) {
-		  // Define App Namespace
-		  var popup = {
-			// Initializer
-			init: function() {
-			  popup.popupVideo();
-			},
-			popupVideo : function() {
-
-			$('.video_model').magnificPopup({
-			type: 'iframe',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
-			fixedContentPos: false,
-			gallery: {
-				  enabled:true
-				}
-		  });
-
-		/* Image Popup*/ 
-		 $('.gallery_container').magnificPopup({
-			  delegate: 'a',
-			type: 'image',
-			mainClass: 'mfp-fade',
-			removalDelay: 160,
-			preloader: false,
-			fixedContentPos: false,
-			gallery: {
-				  enabled:true
-				}
-		  });
-
-			}
-		  };
-		  popup.init($);
-		});
-	</script>
-	<script>
-		$(function(){
-			$('.testimonials').slick({
-				dots: true,
-				arrows: false
-			});
-			$('.your-class').slick();
-		});
-	</script>
+	<script src="js/script.js"></script>
 </body>
 </html>
