@@ -899,7 +899,8 @@ img.mfp-img {
   background-color: #3f4049; }
 
 .testimonials {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .testimonials__wrap {
     border-bottom: 3px solid #fc5f45;
     padding: 3rem 1rem 3rem 42.5rem;
